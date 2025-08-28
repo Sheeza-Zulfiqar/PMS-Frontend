@@ -1,0 +1,300 @@
+/* ===== Palette ===== */
+:root{
+  --panel: #F9F4EC;
+  --brand: #3d2236;   /* purple */
+  --accent: #d9ac63;  /* gold  */
+  --muted: #999;      /* icon/text muted */
+  --hover: #333;      /* icon hover */
+  --border: #BBBCBD;
+}
+
+/* ===== Background with image + overlay ===== */
+.prelogin_Wrap{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+ }
+.prelogin_Wrap::after{
+  content:"";
+  position:absolute; inset:0;
+  background: #3D2236;   /* overlay */
+  opacity:.75;
+}
+
+/* ===== Login card ===== */
+.loginform{
+  width:min(760px, 92vw);
+  background: var(--panel);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.35);
+  position:relative;     /* sits above overlay */
+  z-index:1;
+}
+
+/* Headings inside the panel */
+.loginform h1{ font-size: 24px; font-weight:700; color:#2b1f27; }
+
+/* Inputs (Bootstrap form-control) */
+.loginform .form-control{
+  height:50px;
+  border:1px solid var(--border);
+  border-radius:27px;
+  background:#fff;
+  font-size:18px;
+  padding:0 20px;
+}
+.loginform .form-control:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 .2rem rgba(61,34,54,.25);
+}
+
+/* Links next to labels */
+.Forgot_PW a{
+  color:#828282;
+  font-size:14px;
+  text-decoration:none;
+}
+.Forgot_PW a:hover{ text-decoration:underline; }
+
+/* Buttons */
+.btn{ height:55px; border-radius:55px; font-size:1.125em; font-weight:500; }
+.btn-primary{
+  background: var(--brand); border-color: var(--brand); color:#fff;
+}
+.btn-primary:hover{ background:#2e1828; border-color:#2e1828; }
+.btn-primary:focus{ box-shadow:0 0 0 .2rem rgba(61,34,54,.25); }
+
+.btn-accent{
+  background: var(--accent); border-color: var(--accent); color: var(--brand);
+}
+.btn-accent:hover{ background:#c9994e; border-color:#c9994e; }
+.btn-accent:focus{ box-shadow:0 0 0 .2rem rgba(217,172,99,.35); }
+
+/* Remember me checkbox (optional) */
+.form-check-input{
+  border:2px solid #371E34; width:20px; height:20px; cursor:pointer;
+}
+.form-check-input:checked{ background-color:#371E34; border-color:#371E34; }
+
+/* Password eye toggle */
+.password-container{ position:relative; }
+.password-toggle{
+  position:absolute; top:.55rem; right:.9rem;
+  background:transparent; border:0; cursor:pointer;
+  color: var(--muted); font-size:1.1rem;
+}
+.password-toggle:hover{ color: var(--hover); }
+
+
+/* Card size + full-width look */
+.auth-card{
+  width: min(560px, 92vw);
+  background: var(--panel);
+  border-radius: 16px;
+}
+
+/* Floating inputs */
+.register-form .form-floating > .form-control{
+  height: 56px;
+  border-radius: 12px;
+}
+.register-form .form-floating > label{ color:#666; }
+.register-form .form-control:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 .2rem rgba(61,34,54,.25);
+}
+
+/* Purple button */
+.btn.btn-primary{
+  background: var(--brand);
+  border-color: var(--brand);
+}
+.btn.btn-primary:hover{
+  background:#2e1828;
+  border-color:#2e1828;
+}
+
+/* ====== Palette (you already have similar vars) ====== */
+:root{
+  --brand:#3d2236;      /* purple */
+  --accent:#d9ac63;     /* gold  */
+  --muted:#96a0ad;
+  --line:#e8edf4;
+  --panel:#ffffff;
+}
+
+/* ====== Shell ====== */
+.app-shell{ min-height:100vh; }
+.sidebar{
+  position:fixed; inset:0 auto 0 0; /* full height left */
+  width:240px;
+  background:#f6f8fb;
+  border-right:1px solid var(--line);
+  display:flex; flex-direction:column;
+  padding:16px 12px;
+}
+.main{
+  margin-left:240px;
+  min-height:100vh;
+  padding:32px 28px;
+  background:#fff;
+}
+
+/* Brand row */
+.brand{
+  display:flex; align-items:center; gap:.5rem;
+  font-weight:700; color:var(--brand);
+  margin-bottom:12px; padding:6px 8px;
+}
+
+/* Nav */
+.nav-block{ display:flex; flex-direction:column; gap:6px; padding-top:8px; }
+.side-link{
+  display:flex; align-items:center; gap:.6rem;
+  width:100%; text-align:left;
+  padding:10px 12px; border-radius:10px;
+  color:#222; background:transparent; border:0; cursor:pointer;
+}
+.side-link .icon{ width:22px; text-align:center; }
+.side-link.active{ background:#eceff6; font-weight:600; }
+.side-link:hover{ background:#eef2f8; }
+
+/* Footer (logout pinned bottom) */
+.sidebar-footer{ margin-top:auto; padding-top:10px; }
+
+/* ====== Tiles (wider) ====== */
+.tiles{
+  display:flex; flex-wrap:wrap; gap:24px;
+  align-items:stretch;
+}
+.tile{
+  width:420px; /* wider cards */
+  max-width:100%;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  display:flex; flex-direction:column; gap:10px; align-items:flex-start;
+}
+.tile-icon{
+  font-size:34px; line-height:1; color:var(--brand);
+}
+.tile-title{ margin:4px 0; font-weight:700; }
+.tile-text{ color:#555; margin-bottom:8px; }
+
+/* Buttons keep your palette */
+.btn-primary{ background:var(--brand); border-color:var(--brand); }
+.btn-primary:hover{ background:#2e1828; border-color:#2e1828; }
+.btn-accent{ background:var(--accent); border-color:var(--accent); color:var(--brand); }
+.btn-accent:hover{ background:#c9994e; border-color:#c9994e; }
+
+/* Responsive: collapse sidebar on small screens */
+@media (max-width: 992px){
+  .sidebar{ position:static; width:100%; height:auto; flex-direction:row; gap:8px; }
+  .main{ margin-left:0; padding:20px; }
+  .nav-block{ flex-direction:row; flex:1; }
+  .sidebar-footer{ margin-top:0; }
+}
+/* custom outline color: #2e1828 */
+.btn-outline-plum {
+  --bs-btn-color: #2e1828;
+  --bs-btn-border-color: #2e1828;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #2e1828;
+  --bs-btn-hover-border-color: #2e1828;
+  --bs-btn-focus-shadow-rgb: 46, 24, 40; /* #2e1828 -> rgb */
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #2e1828;
+  --bs-btn-active-border-color: #2e1828;
+  --bs-btn-disabled-color: #2e1828;
+  --bs-btn-disabled-bg: transparent;
+  --bs-gradient: none;
+}
+ /* Row is wider so the two tiles can be wider */
+.home-grid{
+  max-width: 1400px;   /* was 1200; bump as you like */
+  margin-inline: auto; /* center the row */
+}
+
+/* Cards fill their bootstrap column; no fixed width */
+.home-card{
+  border-radius: 18px;
+  width: 100%;
+}
+
+.home-card .card-title{ font-weight: 700; }
+
+@media (min-width: 768px){
+  .home-card .card-body{ padding: 3rem 2.5rem; }
+}
+/* Wider content area for tables/pages */
+.content-wide{
+  max-width: 1200px;      /* increase/decrease to taste */
+  margin-inline: auto;    /* center horizontally */
+}
+
+/* Card-like table wrapper */
+.table-card{
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;                       /* rounds the header too */
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* Header lighter than the + New button (which uses --accent) */
+.table-header-accent th{
+  /* modern browsers */
+  background: color-mix(in srgb, var(--accent) 14%, white);
+  color: #3d2236;                         /* readable on the soft gold */
+  font-weight: 600;
+  border-bottom: 0;
+}
+/* Fallback for older browsers */
+@supports not (color-mix(in srgb, red 20%, white)) {
+  .table-header-accent th{ background: rgba(217,172,99,.14); }
+}
+
+/* Subtle row borders + vertical alignment */
+.table-card tbody tr td{ vertical-align: middle; }
+.table-card tbody tr:not(:last-child) td{
+  border-bottom-color: rgba(0,0,0,.06);
+}
+
+/* Accent button (if you don’t already have this in your theme) */
+.btn-accent{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--brand);
+}
+.btn-accent:hover{
+  background: #c9994e;
+  border-color: #c9994e;
+}
+ .main{ margin-left:240px; padding:32px 28px; width:calc(100vw - 240px); }
+ 
+ .page-container{
+  width: 100%;
+  max-width: 1280px;      /* keep your cap */
+  margin-left: 0;         /* pin to the left edge of main */
+  margin-right: auto;     /* gap only on right */
+  padding-inline: 16px;
+}
+
+ .table-card{ width:100%; }
+.app-shell .main > .page-container{ max-width:1280px !important; width:100% !important; }
+ /* clickable # link that looks like text */
+.link-plain {
+  color: var(--brand);
+  text-decoration: none;
+}
+.link-plain:hover { text-decoration: underline; }
+
+/* keep table max-width */
+.page-container { max-width: 1280px; margin-inline: auto; padding-inline: 16px; }
+/* card table full width */
+.table-card { width: 100%; border-radius: 14px; overflow: hidden; }
