@@ -39,11 +39,10 @@ import AuthContext from "../context/AuthContext";
         </div>
       </aside>
 
-      <main className="main">
-         <div className="page-container py-4">
-          {children}
-        </div>
-      </main>
+   <main className="main">
+  <div className="content-wrap py-4">{children}</div>
+</main>
+
     </div>
   );
 }

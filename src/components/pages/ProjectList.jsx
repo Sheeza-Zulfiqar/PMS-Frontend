@@ -19,7 +19,7 @@ import { navigate } from "../customRouter/router";
   useEffect(() => { load(); }, []);
 
   return (
-    <div className="page-container py-4">
+    <div className=" py-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3 className="mb-0">My Projects</h3>
         <button className="btn btn-accent" onClick={() => navigate("/projects/new")}>+ New</button>
